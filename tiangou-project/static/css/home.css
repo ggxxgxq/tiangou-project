@@ -1,0 +1,136 @@
+article {
+	background: #eeeff4;
+}
+
+form input[type=search]{
+	width: 100%;
+    padding: .04rem .12rem;
+    font-size: .16rem;
+    line-height: .26rem;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    outline: 0;
+}
+
+
+
+#topWrap{
+	background:linear-gradient(160deg, #ff112e 220px,#ffffff 220px);
+	min-height: 2.35rem;
+	padding:0 0.2rem;	
+	display: flex;
+	flex-direction:column;
+	font-size: .16rem;
+}
+.top{
+	height: .35rem;
+	width: 100%;
+	display: flex;
+	align-items:center;
+	padding:.2667rem 0;
+}
+.top i,a{
+	display: block;
+	color: #fff;
+}
+.top form{
+	flex:1;
+	margin-right: .2rem;
+	position:relative;
+	
+}
+.top form i{
+	position: absolute;
+	left:.03rem ;
+	top:.03rem;
+}
+.top form #indexSear{
+	line-height: .22rem;
+	background-color: rgba(255,255,255,0.35);
+    text-align: left;
+    padding-left: .3rem;
+    border:0;
+    border-radius: 0;
+}
+.top form input::-webkit-input-placeholder{
+	color: #fff;
+	font-size: .11rem;
+	line-height: .22rem;
+}
+.top .text-white{
+	line-height: 1;
+    z-index: 1;
+    color: #fff;
+    margin-right:.133rem;
+}
+.slider{
+	background: #fcd;
+}
+.slider a{
+	display: block;
+	height: 1.83rem;
+	width: 100%;
+}
+.slider a img{
+	max-height: 1.83rem;
+	width: 100%;
+}
+.swiper-pagination{
+	bottom: 10px;
+	left:50%;
+}
+.shop_item{
+	padding-bottom: .1rem;
+	background: #f00;
+
+}
+.nav_list{
+	padding:.133rem;
+	padding-top: .267rem;
+	margin-left:-.2rem; 
+	margin-right:-.2rem; 
+	display: flex;
+}
+.nav_list a{
+	display: block;
+    flex:1;
+    text-align: center;
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:space-between;
+}
+.nav_list a div{
+	width: .5rem;
+	height: .5rem;
+	margin-bottom: .13rem;
+}
+.nav_list a div img{
+	max-height: 100%;
+	max-width: 100%;
+	display: block;
+	border:0;
+}
+.nav_list a p{
+	font-size: .14rem;
+	color: #666;
+}
+.shop_banner{
+	padding:0 .133rem .133rem ;
+	margin-bottom:.133rem;
+	min-height: 1.14rem;
+	background: #fff;
+}
+.shop_banner a{
+	display: block;
+	height: 1.04rem;
+	width: 100%;
+}
+.shop_banner a img{
+	 display: block;
+	max-width: 100%;
+	max-height: 100%;
+}
+.spe_title img{
+	max-width: 100%;
+}
