@@ -29,10 +29,15 @@ form input[type=search]{
 	align-items:center;
 	padding:.2667rem 0;
 }
-.top i,a{
+.top a{
 	display: block;
 	color: #fff;
 }
+.top i{
+	display: block;
+	color: #fff;
+}
+
 .top form{
 	flex:1;
 	margin-right: .2rem;
@@ -65,6 +70,10 @@ form input[type=search]{
 }
 .slider{
 	background: #fcd;
+	height: 1.83rem;
+}
+.sliderInner{
+	height: 1.83rem;
 }
 .slider a{
 	display: block;
@@ -72,7 +81,7 @@ form input[type=search]{
 	width: 100%;
 }
 .slider a img{
-	max-height: 1.83rem;
+	height: 1.83rem;
 	width: 100%;
 }
 .swiper-pagination{
@@ -131,6 +140,127 @@ form input[type=search]{
 	max-width: 100%;
 	max-height: 100%;
 }
+.spe_title{
+	height: .4rem;
+	background: #fff;
+}
 .spe_title img{
 	max-width: 100%;
+}
+.limitwrap{
+	background: #fff;
+	padding:0 .133rem .133rem;
+	color:#666 ;
+}
+.limitwrap section{
+    background: linear-gradient(135deg, rgb(255, 230, 230) 0%, rgb(255, 250, 206) 100%);
+    /* width: 100%;
+    height: 100%; */
+}
+.limitwrap .limit_buy{
+   border:1px solid #ebebeb;
+}
+.limit_content{
+	padding-top:.133rem;
+	padding-bottom: .06rem;
+}
+.limit_content a{
+	padding:.06rem .133rem;
+	display: flex;
+	justify-content:space-between;
+	align-items:center;
+}
+.limit_left{
+	display: flex;
+}
+.limit_left span{
+    display: block;
+}
+.limit_left .font{
+	width: .7rem;
+	line-height: .21rem;
+	font-weight: bold;
+	color: #000;
+	font-size: .14rem;
+}
+.limit_left .countDown{
+	display: flex;
+	justify-content:space-between;
+	align-items:center;
+}
+.limit_left .countDown span{
+	padding: .02rem;
+    font-size: .09rem;
+    border-radius: .04rem; 
+    background-color: #ff4c48;
+    text-align: center;
+    color: #fff;
+    /* transform:scale(0.5); */
+ 
+}
+.limit_shop{
+	padding:.133rem;
+	overflow-x: auto;
+	 /* scroll:no;  */
+    overflow-y: hidden;
+    font-size: 0;
+    white-space: nowrap;
+}
+.limit_shop a{
+	display: inline-block;
+	width: .9rem;
+	margin-right:.133rem;
+}
+.limit_shop a .shop_img{
+   width: .9rem;
+   height: .9rem;
+}
+.limit_shop a .shop_img img{
+   width: 100%;
+   height: 100%;
+}
+.limit_shop a .shop_price{
+	margin-bottom: .133rem;
+	text-align:center;
+}
+.orign_pri{
+    font-size: 13px;
+    color: #ff4c48;
+    margin-right: .065rem;
+}
+.del_pri{
+	text-decoration: line-through;
+    font-size: 10px;
+    text-align: center;
+}
+.groop_wrap{
+	background: #fff;
+	padding-bottom: .133rem;
+	margin-bottom: .133rem;
+	width: 100%;
+	margin-right:auto;
+	margin-left: auto;
+}
+.groop_book{
+	padding:0 .133rem;
+	background: #fcc;
+}
+.brand_sale{
+	
+	/* overflow: hidden; */
+   /*  clear: left; */
+    min-height: 0.01rem;
+    padding-right: .1rem;
+    padding-bottom: .1rem;
+
+}
+.brand_sale div{
+   width: 50%;
+   border: 1px solid rgb(238, 238, 238);
+   float: left;
+   clear: left;
+}
+.brand_sale img{
+	width: 100%;
+	height:100%;
 }
