@@ -334,6 +334,9 @@ form input[type=search]{
 }
 .slist section{
 	border:1px solid #ebebeb;
+	width: 1.69rem;
+	height: 2.46rem;
+	margin:auto;
 }
 .slist .shop_msg{
    display: flex;
@@ -353,13 +356,7 @@ form input[type=search]{
 	padding-top: .05rem;
    margin:-.05rem .133rem .133rem; 
 }
- /* .shop_detail span:last-child{
- 	-webkit-line-clamp:2;
- 	-webkit-box-orient :vertical;
- 	text-overflow: ellipsis;
- 	overflow: hidden;
-    white-space: initial;
- }  */
+
 .shop_detail span:first-child{
 	background-color: #fff;
     border: 1px solid #25aaff;
