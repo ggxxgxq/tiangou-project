@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="aaa">
 		<header>
 			<div class="div1"><i class="iconfont icon-iconset0256"></i></div>
 			<div class="div2"><i class="iconfont icon-sousuo1"></i><input type="text" placeholder="爱乐维叶酸" /></div>
@@ -58,7 +58,7 @@
 			<span>single item Recommendation</span>
 			
 			<div class="list" v-for="item in list2">
-			    <a href="/detail"> 
+			    <a href="/detail" > 
 					<div class="listL"><img :src="item.data.imageUrl"></div>
 					<div class="listR">
 						<div class="listR1">{{item.data.title}}</div>
@@ -70,7 +70,7 @@
 				  </a> 
 			</div>
 			<div class="list" v-for="item in list3">
-			    <a href="/detail"> 
+			    <a href="#/detail"> 
 					<div class="listL"><img :src="item.data.imageUrl"></div>
 					<div class="listR">
 						<div class="listR1">{{item.data.title}}</div>
@@ -163,6 +163,9 @@ import axios from "axios";
 	}
 </script>
 <style scoped>
+    .aaa{
+     margin-bottom:.49rem;
+    }
 	header{
     width: 100%;
     height: .44rem;
