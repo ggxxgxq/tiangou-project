@@ -39,8 +39,21 @@
 			<img src="https://img1.tg-img.com/seller/201803/09/21199526-D48C-4016-A78B-8B9BA5498AB3.jpg!y">
 		</div>
 		<div class="slide">
-			
-			
+	
+			<div class="li1"><img src="https://img1.tg-img.com/seller/201801/21/1F994B91-0794-4A23-8E22-65E800180129.jpg!y"></div>
+			<div class="li2"><img src="https://img1.tg-img.com/seller/201801/21/545DD0B3-AD62-492B-9DE7-12FAEC24F4E4.jpg!y"></div>
+			<div class="li2"><img src="https://img1.tg-img.com/seller/201801/21/A3943880-01A6-45CE-B060-26302308B728.jpg!y"></div>
+			<div class="li2"><img src="https://img1.tg-img.com/seller/201712/25/BE56E9D1-FABC-4D71-B29C-BBF057AA939C.jpg!y"></div>
+			<div class="li2"><img src="https://img1.tg-img.com/seller/201712/25/8EE75050-1B98-4368-B61F-32C691A77E77.jpg!y"></div>
+		    <div class="li2"><img src="https://img1.tg-img.com/seller/201712/25/9B730434-717F-4723-89C8-19B693233DF4.jpg!y"	></div>
+		    <div class="li2"><img src="https://img1.tg-img.com/seller/201712/25/2D2350AA-695E-4936-AC1F-5EF81B8D89F9.jpeg!y"></div>
+		</div>
+		<div class="picture">
+			<img src="https://img1.tg-img.com/seller/201803/10/BA3689B7-9FF3-40DD-8F1C-3240FFFAE79D.jpg!y">
+		</div>
+		<div class="listdiv">
+			<h1>单品推荐</h1>
+			<span>single item Recommendation</span>
 		</div>
 	</div>
 </template>
@@ -157,7 +170,49 @@ import axios from "axios";
     	width: 100%;
     }
     .slide{
+    	width: 100%;
     	height:1.52rem;
-    	background: #fcc;
+    	padding: .06rem 0;
+    	overflow-y: hidden;
+    	overflow-x: scroll;
+    	white-space: nowrap;
+    }
+   
+    .slide .li1{
+    	display: inline-block;
+    	width: 1rem;
+    	height: 1.4rem;
+        margin: 0 .06rem;
+    }
+    .slide .li2{
+    	display: inline-block;
+    	width: 1rem;
+    	height: 1.4rem;
+        margin-right: .06rem;
+    }
+    .slide .li1 img{
+    	width: 100%;
+    }
+    .slide .li2 img{
+    	width: 100%;
+    }
+    .picture{
+    	height:1.6rem;
+    }
+    .picture img{
+    	width: 100%;
+    }
+    .listdiv{
+    	height: .98rem;
+    	background: #ccc;
+    	padding: .09rem 0 0 .09rem;
+    }
+    .listdiv h1{
+    	font-size: .15rem;
+    	color:#222;
+    }
+    .listdiv span{
+    	font-size: .11rem;
+    	color:#999;
     }
 </style>
