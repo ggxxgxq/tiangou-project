@@ -38,22 +38,49 @@
 		<div class="middle">
 			<img src="https://img1.tg-img.com/seller/201803/09/21199526-D48C-4016-A78B-8B9BA5498AB3.jpg!y">
 		</div>
-		<div class="slide">
-	
-			<div class="li1"><img src="https://img1.tg-img.com/seller/201801/21/1F994B91-0794-4A23-8E22-65E800180129.jpg!y"></div>
-			<div class="li2"><img src="https://img1.tg-img.com/seller/201801/21/545DD0B3-AD62-492B-9DE7-12FAEC24F4E4.jpg!y"></div>
-			<div class="li2"><img src="https://img1.tg-img.com/seller/201801/21/A3943880-01A6-45CE-B060-26302308B728.jpg!y"></div>
-			<div class="li2"><img src="https://img1.tg-img.com/seller/201712/25/BE56E9D1-FABC-4D71-B29C-BBF057AA939C.jpg!y"></div>
-			<div class="li2"><img src="https://img1.tg-img.com/seller/201712/25/8EE75050-1B98-4368-B61F-32C691A77E77.jpg!y"></div>
-		    <div class="li2"><img src="https://img1.tg-img.com/seller/201712/25/9B730434-717F-4723-89C8-19B693233DF4.jpg!y"	></div>
-		    <div class="li2"><img src="https://img1.tg-img.com/seller/201712/25/2D2350AA-695E-4936-AC1F-5EF81B8D89F9.jpeg!y"></div>
-		</div>
-		<div class="picture">
-			<img src="https://img1.tg-img.com/seller/201803/10/BA3689B7-9FF3-40DD-8F1C-3240FFFAE79D.jpg!y">
+		<div class="slidepicture" v-for="item in slide">
+			<div class="slide">
+		
+				<div class="li1"><img :src="item.img1"></div>
+				<div class="li2"><img :src="item.img2"></div>
+				<div class="li2"><img :src="item.img3"></div>
+				<div class="li2"><img :src="item.img4"></div>
+				<div class="li2"><img :src="item.img5"></div>
+			    <div class="li2"><img :src="item.img6"	></div>
+			    <div class="li2"><img :src="item.img7"></div>
+			</div>
+			<div class="picture">
+				<img :src="item.img8">
+			</div>
 		</div>
 		<div class="listdiv">
 			<h1>单品推荐</h1>
 			<span>single item Recommendation</span>
+			
+			<div class="list" v-for="item in list2">
+			    <a href="/detail"> 
+					<div class="listL"><img :src="item.data.imageUrl"></div>
+					<div class="listR">
+						<div class="listR1">{{item.data.title}}</div>
+						<div class="listR2">{{item.data.promotion}}</div>
+						<div class="listR3"><img width="12" height="12" :src="item.data.countryImageUrl"><span>{{item.data.countryName}}</span></div>
+						<p>￥{{item.data.price}}<span>￥{{item.data.originalPrice}}</span></p>
+						<h2>{{item.data.brandName}}</h2>
+					</div>
+				  </a> 
+			</div>
+			<div class="list" v-for="item in list3">
+			    <a href="/detail"> 
+					<div class="listL"><img :src="item.data.imageUrl"></div>
+					<div class="listR">
+						<div class="listR1">{{item.data.title}}</div>
+						<div class="listR2">{{item.data.promotion}}</div>
+						<div class="listR3"><img width="12" height="12" :src="item.data.countryImageUrl"><span>{{item.data.countryName}}</span></div>
+						<p>￥{{item.data.price}}<span>￥{{item.data.originalPrice}}</span></p>
+						<h2>{{item.data.brandName}}</h2>
+					</div>
+				  </a> 
+			</div> 
 		</div>
 	</div>
 </template>
@@ -65,14 +92,64 @@ import axios from "axios";
 		name: 'Seashopping',
 		data(){
 		  return{
-		    list:[]
+		    list:[],
+		    list2:[],
+		    list3:[],
+		    slide:[{img1:"../../static/img/slide1.jpg",
+				    img2:"../../static/img/slide2.jpg",
+				    img3:"../../static/img/slide3.jpg",
+				    img4:"../../static/img/slide4.jpg",
+				    img5:"../../static/img/slide5.jpg",
+				    img6:"../../static/img/slide6.jpg",
+				    img7:"../../static/img/slide7.jpg",
+				    img8:"../../static/img/picture.jpg"
+				     },
+                     {img1:"../../static/img/ss1.jpg",
+				    img2:"../../static/img/ss2.jpg",
+				    img3:"../../static/img/ss3.jpg",
+				    img4:"../../static/img/ss4.jpg",
+				    img5:"../../static/img/ss5.jpg",
+				    img6:"../../static/img/ss6.jpg",
+				    img7:"../../static/img/ss7.jpg",
+				    img8:"../../static/img/ss8.jpg"
+				     },
+				     {img1:"../../static/img/sl1.jpg",
+				    img2:"../../static/img/sl2.jpg",
+				    img3:"../../static/img/sl3.jpg",
+				    img4:"../../static/img/sl4.jpg",
+				    img5:"../../static/img/sl5.jpg",
+				    img6:"../../static/img/sl6.jpg",
+				    img7:"../../static/img/sl7.jpg",
+				    img8:"../../static/img/sl8.jpg"
+				     },
+				      {img1:"../../static/img/sd1.jpg",
+				    img2:"../../static/img/sd2.jpg",
+				    img3:"../../static/img/sd3.jpg",
+				    img4:"../../static/img/sd4.jpg",
+				    img5:"../../static/img/sd5.jpg",
+				    img6:"../../static/img/sd6.jpg",
+				    img7:"../../static/img/sd7.jpg",
+				    img8:"../../static/img/sd8.jpg"
+				     }
+				    ]
 		  }
 		},
 		mounted(){
            axios.get("https://midway.51tiangou.com/overseas/main/tab.node?cityId=2554&selected=true&pid=12&cid=-1&index=1&_=1520829037735")
 		  .then((res)=>{
-		  	console.log(res);
 		    this.list=res.data.data[0].data.items;
+		  })
+		  axios.get("https://midway.51tiangou.com/overseas/main/tab.node?cityId=2554&selected=true&pid=12&cid=-1&index=1&_=1520905922945&tabIndex=0&childIndex=0&currentView=2")
+		  .then((res)=>{
+		  	console.log(res.data.data);
+		  	console.log((res.data.data).slice(0,10));
+		  	console.log((res.data.data).slice(10)[0].data);
+		    this.list2=(res.data.data).slice(0,10);
+	           axios.get((res.data.data).slice(10)[0].data)
+			  .then((res)=>{
+			    console.log(res.data.data);
+			    this.list3=(res.data.data).slice(0,10);
+			  })
 		  })
 		},
 		updated(){
@@ -203,16 +280,79 @@ import axios from "axios";
     	width: 100%;
     }
     .listdiv{
-    	height: .98rem;
-    	background: #ccc;
-    	padding: .09rem 0 0 .09rem;
+    	padding-top: .09rem;
     }
     .listdiv h1{
     	font-size: .15rem;
+    	padding-left: .09rem;
+    	line-height: .25rem;
     	color:#222;
     }
     .listdiv span{
-    	font-size: .11rem;
+    	font-size: .13rem;
+    	line-height: .2rem;
+    	padding-left: .09rem;
     	color:#999;
+    }
+    .listdiv .list{
+    	width: 100%;
+    	border-bottom:1px solid #ebebeb; 
+    }
+    .listdiv .list a{
+    	align-items: center;
+    	display: flex;
+        padding: .1rem .1rem ;
+    }
+    .listdiv .listL{
+    	width: 1.42rem;
+    	height: 1.42rem;
+    	border:1px solid #ebebeb;
+    }
+    .listdiv .listL img{
+        width: 100%;
+        height: 100%;
+    }
+    .listdiv .listR{
+    	width: 2.13rem;
+    	padding-left:.1rem; 
+    	text-align: left;
+    }
+    .listR .listR1{
+    	font-size: .13rem;
+    	color:#222;
+    }
+    .listR .listR2{
+    	font-size: .12rem;
+    	overflow: hidden;
+    	text-overflow: ellipsis;
+    	/*white-space: initial;*/
+    	-webkit-line-clamp: 3;
+    	display: -webkit-box;
+    	-webkit-box-orient: vertical;
+    	height: .51rem;
+    	color:#999;
+    }
+    .listR .listR3{
+    	
+    	font-size: .10rem;
+    	color:#666;
+    }
+    .listR .listR3 img{
+    	vertical-align: middle;
+    }
+    .listR .listR3 span{
+    	vertical-align: middle;
+    }
+    .listR p{
+    	color:#ff4c48;
+    	font-size: .14rem;
+    }
+    .listR span{
+    	color:#666;
+    	font-size: .12rem;
+    }
+    .listR h2{
+    	color:#ff9800;
+    	font-size: .10rem;
     }
 </style>
