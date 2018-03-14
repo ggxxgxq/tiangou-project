@@ -1,14 +1,15 @@
 <template>
-	<div>
+	<div class="article">
 		<header>
-			<div class="headerone"> < </div>
+			<div class="headerone"> <a href="/seashopping"> < </a> </div>
 			<div class="headertwo">
 				<div class="hone active">商品</div>
 				<div class="htwo">详情</div>
 			</div>
-			<div class="headerthree"><i class="iconfont icon-gouwuche"></i>
+			<div class="headerthree"><i class="iconfont icon-icon--"></i>
 			<span>...</span></div>
 		</header>
+		
         <div class="menu">
            <div class="swiper-container">
 			    <div class="swiper-wrapper">
@@ -38,18 +39,47 @@
          	     <span class="detfo3 left">6.4折</span>
          	     <span class="detfo4 right">已售148</span>
          	 </div>
-         	 <div class="pay">
-         	 	<div>
-         	 	  <i class="iconfont"></i>
+         	 
+         </div>  
+		 <div class="pay">
+         	 	<div class="pay1">
+         	 	  <i class="iconfont icon-duigouzhong"></i>
          	 	  <span>移动支付</span>
          	 	</div>
-                <div><i class="iconfont"></i></div>
-         	 </div>
-         </div>  
-			
-			
-			
-		
+                <div class="pay2"><i class="iconfont  icon-jiantou1"></i></div>
+         </div>	
+		<div class="goodpay">
+			<span class="small">券</span>
+			<p>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+			<span class="smallright"><i class="iconfont icon-jiantou1"></i></span>
+		</div>
+		<div class="activity">
+			<div class="activity1">
+			   <span class="spanon">活动</span>
+			   <span class="low">超低价囤货</span>
+			</div>
+			<div class="activity1">
+				<span class="spanon">活动</span>
+			   <span class="low">面膜告白日</span>
+			</div>
+		</div>	
+		<div class="mock mockb">
+			<span>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</span>
+			<span><i class="iconfont icon-jiantou1"></i></span>
+		</div>
+		<div class="mock mocko">
+			<span class="save">选择  数量</span>
+			<span><i class="iconfont icon-jiantou1"></i></span>
+		</div>
+		<div class="mock mockb">
+			<span class="save">产品参数</span>
+			<span><i class="iconfont icon-jiantou1"></i></span>
+		</div>
+		<div class="brand">
+			<img  width="50" height="50" src="../../static/img/lv.jpg" class="left border">
+			<p class="left">RYOE 吕</p>
+			<span class="right">进入品牌</span>
+		</div>
 	</div>
 </template>
 
@@ -73,11 +103,25 @@
 </script>
 
 <style scoped>
+    .article{
+    	background: #eeeff4;
+    	position: relative;
+    	margin-bottom: .98rem;
+    }
+    .icon-jiantou1{
+    	color:#999;
+    }
 	header {
+		position: fixed;
+		top: 0;
+		left:0;
+        width: 100%;
+        z-index: 999;
 	    height: .44rem;
 	    display: flex;
 	    color:#222;
 	    align-items: center;
+	    background: #fff;
 	}
 	.headerone{
        min-width: 20%;
@@ -101,9 +145,6 @@
 		bottom: 0;
 		font-weight: 900;
 		font-size: .18rem;
-	}
-	.icon-gouwuche{
-		color:#666;
 	}
 	.headertwo{
 	   font-size: .15rem;
@@ -135,15 +176,20 @@
 		text-align: center;
 	}
 	.menu{
+		margin-top: .44rem;
+		background: #fff;
 		height: 3.75rem;
 	}
 	.menu img{
 		width: 100%;
+		height: 100%;
 		vertical-align:middle;
+        border-bottom: .01rem solid #ebebeb;
 	}
 	.det{
 		height: 1.58rem;
 		padding: .1rem;
+		background: #fff;
 	}
 	.detone{
 		height: .22rem;
@@ -211,12 +257,140 @@
 	 color:#999;
 	}
 	.pay{
-		height: .35rem;
-		padding: .13rem .13rem;
+		padding: .05rem .1rem;
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
+		background: rgb(248, 248, 248);
 	}
-	.pay span{
-		
+	.pay .iconfont{
+		color:#999;
 	}
+	.pay1{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.pay1 i{
+       font-size: .18rem;
+       color:#ff4c48;
+	}
+	.pay1 span{
+		color:#666;
+		margin-left: .05rem;
+	}
+    .goodpay{
+    	height: .45rem;
+    	padding: .1rem .1rem;
+    	display: flex;
+    	margin-top: .13rem;
+    	background: #fff;
+    	justify-content: space-between;
+    	align-items: center;
+    	border-bottom: .01rem solid #ebebeb;
+    }
+    .goodpay .iconfont{
+		color:#999;
+	}
+    .small{
+        color: #fff;
+        min-width: .34rem;
+        background: -webkit-linear-gradient(left, #ff4c48, #ff4c48 29px,#fff 
+        30px, #ff726f 30px, #ff726f);
+        display: inline-block;
+	    height: .14rem;
+	    font-size: .10rem;
+	    line-height: .12rem;
+	    text-align: center;
+	    vertical-align: middle;
+	    white-space: nowrap;
+	    padding-right: .02rem;
+	    margin-right: .1rem;
+    }
+    .goodpay p{
+    	color:#666;
+    	font-size: .14rem;
+    	overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        white-space: initial; 
+        -webkit-line-clamp: 1;
+
+    }
+    .activity{
+    	height: .54rem;
+    	padding: .1rem;
+    	background: #fff;
+    	border-bottom: .01rem solid #ebebeb;
+
+    }
+    .activity1{
+    	display: flex; 
+    	justify-content: flex-start;
+    	align-items: center;
+    }
+    .activity1 .spanon{
+    	border: .01rem solid #ffa4a2;
+    	display: inline-block;
+	    height: .14rem;
+	    min-width: .28rem;
+	    background: #ffedec;
+	    font-size: .10rem;
+	    line-height: .12rem;
+	    text-align: center;
+	    vertical-align: middle;
+	    white-space: nowrap;
+	    padding-right: .02rem;
+	    color: #ff4c48;
+	    margin-right: .05rem;
+    }
+    .low{
+    	font-size: .12rem;
+    }
+    .mock{
+    	height: .44rem;
+    	padding: .1rem .1rem;
+    	display: flex;
+    	justify-content: space-between;
+    	align-items: center;
+    	background: #fff;
+    	
+    }
+    .mockb{
+    	margin-bottom: .13rem;
+    }
+    .mocko{
+    	border-bottom: .01rem solid #ebebeb;
+    }
+    .brand{
+    	height: .72rem;
+    	line-height: .52rem;
+    	padding: .1rem;
+    	background: #fff;
+    	margin-bottom: .13rem;
+    }
+    .brand p{
+    	font-size: .15rem;
+    	color:#222;
+    }
+    .border{
+    	border:.01rem solid #ebebeb;
+    	margin-right: .1rem;
+    }
+    .brand span{
+       font-size: .11rem;
+       padding: .06rem .05rem;
+       background-color: #fff;
+       border: 1px solid #ff4c48;
+       color: #ff4c48;
+       border-radius: .03rem;
+       display: inline-block;
+       min-width: .20rem;
+       line-height: 1;
+	   vertical-align: middle;
+	   white-space: nowrap;
+	   text-align: center;
+	   margin-top: .1rem;
+    }
 </style>

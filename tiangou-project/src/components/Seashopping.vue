@@ -1,9 +1,9 @@
 <template>
 	<div class="aaa">
 		<header>
-			<div class="div1"><i class="iconfont icon-iconset0256"></i></div>
+			<div class="div1"><i class="iconfont icon-tiaoxingma"></i></div>
 			<div class="div2"><i class="iconfont icon-sousuo1"></i><input type="text" placeholder="爱乐维叶酸" /></div>
-			<div class="div3"><i class="iconfont  icon-gouwuche"></i></div>
+			<div class="div3"><i class="iconfont  icon-icon--"></i></div>
 		</header>
 		<nav>
 		   <ul>
@@ -82,14 +82,19 @@
 				  </a> 
 			</div> 
 		</div>
+		<Footer></Footer>
 	</div>
 </template>
 
 <script>
 import axios from "axios";
+import Footer from "../components/Footer";
 
 	export default {
 		name: 'Seashopping',
+		components:{
+  	       Footer 
+        },
 		data(){
 		  return{
 		    list:[],
@@ -189,7 +194,7 @@ import axios from "axios";
 		margin-right: .15rem;
 	}
 	.div2{
-		 background: #F4F4F4;
+		background:#F4F4F4;
 		display: flex;
 		align-items: center;
         flex:1;
@@ -200,6 +205,12 @@ import axios from "axios";
        width: 100%;
        border:0;
        background: #F4F4F4;
+       display: block;
+	}
+	.div2 i{
+	   display: inline-block;
+	   margin-top: -0.15rem;
+	   height: .26rem;
 	}
 	nav{
 		height: .40rem;
