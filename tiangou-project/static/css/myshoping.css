@@ -1,3 +1,9 @@
+.bodyWrap{
+	background: #eeeff4;
+	color: #666;
+	font-size: .14rem;
+}
+
 header {
 	height: .44rem;
 	display: flex;
@@ -93,4 +99,127 @@ header {
 .orderWrap>div{
 	flex:1;
 	padding:.2rem 0;
+	text-align:center;
+}
+
+#change{
+	font-size: .28rem;
+	width: .24rem;
+	height: .24rem;
+	overflow: hidden;
+	text-align: center;
+}
+#pay{
+	font-size: .18rem;
+	padding-top:.1rem;
+
+}
+.orderWrap>div .change{
+	margin-top: -0.05rem;
+}
+.orderWrap>div .change1{
+	padding-top: 0.12rem;
+}
+.orderWrap>div i{
+	font-size: .24rem;
+	color: #666;
+}
+.orderWrap>div p{
+	font-size: .11rem;
+    padding-top: .065rem;
+}
+.speWrap{
+	margin-top: .133rem;
+}
+.specil_my{
+	width: 100%;
+	background: #fff;
+	margin-right: auto;
+	margin-left: auto;
+	overflow: hidden;
+}
+.specil_my .s_lit{
+   border-bottom: 1px solid #ebebeb;
+   text-align: center;
+   overflow: hidden; 
+   padding: .2rem .065rem;
+   width: 20%;
+   float: left;
+}
+.s_lit p{
+	margin-top: .065rem;
+	font-size: .11rem;
+}
+.icon-tesefuwu{
+	color: #f00;
+	font-weight: bolder;
+}
+.service{
+	background: #fff;
+	padding: .133rem;
+	margin-top: .133rem;
+	display: flex;
+	justify-content:space-between;
+	align-items:center;
+}
+.icon-kefu{
+	font-size: .18rem;
+}
+.service span{
+	margin-left: .133rem;
+	color: #222;
+}
+.likeWrap{
+	overflow: hidden;
+	margin-top: .133rem;
+	background: #fff;
+	margin-bottom: .33rem;
+}
+.likeWrap .line{
+	margin-top: .2rem;
+	border-bottom: 1px solid #ebebeb;
+	margin-right:.33rem ;
+	margin-left:.33rem ;
+}
+.likeWrap h1{
+	width: 1rem;
+	font-size: .14rem;
+	margin: -.25rem auto .2rem;
+	text-align: center;
+	color: #222;
+	padding: .133rem 0;
+	background: #fff;
+}
+.likelist{
+	padding-bottom: .33rem;
+	overflow: hidden;
+}
+.likelist a{
+	width: 33.33%;
+	display: block;
+	float: left;
+}
+.Lshop{
+	/* width: 33.33%; */
+	background: #fff;
+}
+.Lshop-img{
+	width: .1.15rem;
+	height: 1.15rem;
+}
+.Lshop-img img{
+	max-width: 100%;
+	max-height: 100%;
+}
+.font{
+	padding: .065rem;
+	-webkit-line-clamp:2;
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-box-orient :vertical;
+	text-overflow: ellipsis;
+}
+.price{
+	font-size: .17rem;
+	color: #ff4c48;
 }
