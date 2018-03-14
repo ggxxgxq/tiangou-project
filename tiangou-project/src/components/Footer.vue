@@ -2,11 +2,11 @@
    <footer>
            <ul class="footerul">
               <li>
-                 <router-link active-class="active"  to="/goshopping" class="iconfont icon-chuanzhongshangdian"></router-link>
+                 <router-link active-class="active"  to="/goshopping" class="iconfont icon-shangdian"></router-link>
                  <span>逛商场</span>
               </li>
               <li>
-                 <router-link active-class="active" to="/find" class="iconfont icon-icon-"></router-link>
+                 <router-link active-class="active" to="/find" class="iconfont icon-xiangji"></router-link>
                  <span>发现</span>
               </li>
               <li>

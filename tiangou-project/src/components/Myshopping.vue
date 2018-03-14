@@ -1,12 +1,12 @@
 <template>
 	<div class="bodyWrap">
 		<header>
-			<div class="headerone"> < </div>
+			<div class="headerone"><i class="iconfont icon-jiantou2"></i> </div>
 			<div class="headertwo">
 				<div class="htwo">我的天狗</div>
 			</div>
-			<div class="headerthree"><i class="iconfont icon-gouwuche"></i>
-			<span>...</span></div>
+			<div class="headerthree"><i class="iconfont icon-icon--"></i>
+			<i class="iconfont icon-more"></i></div>
 		</header>
 		<div class="loginWrap">
 			<div class="login">
