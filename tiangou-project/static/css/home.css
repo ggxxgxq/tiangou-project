@@ -347,7 +347,7 @@ form input[type=search]{
    height: 1.64rem;
 }
 .shop_detail{
-	/* height: .457rem; */
+	/* height: .457rem; */	
 	-webkit-line-clamp:2;
 	display: -webkit-box;
 	overflow: hidden;
@@ -356,6 +356,13 @@ form input[type=search]{
 	padding-top: .05rem;
    margin:-.05rem .133rem .133rem; 
 }
+/* .detil{
+	-webkit-line-clamp:2;
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-box-orient :vertical;
+	text-overflow: ellipsis;
+} */
 
 .shop_detail span:first-child{
 	background-color: #fff;

@@ -2,13 +2,13 @@
   <article class="bodyWrap">
   	<div id="topWrap">
 		<div class="top">
-			<i class="iconfont icon-iconset0256 text-white"></i>
+			<i class="iconfont icon-tiaoxingma text-white"></i>
 			<form>
-			    <i class="iconfont icon-sousuo1"></i>
+			    <i class="iconfont icon-msnui-search"></i>
 				<input type="search" id="indexSear" name="indexSear" placeholder="天喔多味酸奶￥5元袋">
 			</form>
-			<a href="./page" class="text-white"><i class="iconfont icon-gouwuche"></i></a>
-			<a href="" ><i class="iconfont icon-icon--"></i></a>
+			<a href="./page" class="text-white"><i class="iconfont icon-gouwuche1"></i></a>
+			<a href="" ><i class="iconfont icon-xiaoxi1"></i></a>
 		</div>
 		<div class="slider">
 
@@ -233,16 +233,20 @@
 				</div>
 			</div>
 		</div>
+		<Footer />
   </article>
 </template>
 
 <script>
 import axios from "axios"
-
+import Footer from './Footer'
 
 
 export default {
   name: 'Home',
+  components:{
+  	Footer 
+  },
   data () {
     return {
       listSlider:[],
