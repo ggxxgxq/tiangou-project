@@ -38,6 +38,13 @@
          	     <span class="detfo3 left">6.4折</span>
          	     <span class="detfo4 right">已售148</span>
          	 </div>
+         	 <div class="pay">
+         	 	<div>
+         	 	  <i class="iconfont"></i>
+         	 	  <span>移动支付</span>
+         	 	</div>
+                <div><i class="iconfont"></i></div>
+         	 </div>
          </div>  
 			
 			
@@ -132,10 +139,10 @@
 	}
 	.menu img{
 		width: 100%;
+		vertical-align:middle;
 	}
 	.det{
 		height: 1.58rem;
-		background: #fcc;
 		padding: .1rem;
 	}
 	.detone{
@@ -168,8 +175,48 @@
 	.detfour{
 		height: .20rem;
 		margin-top: .1rem;
+		line-height: .2rem;
 	}
-	.menu img{
-		vertical-align:middle; 
+	.detfo1{
+	  display:block;
+	  width: .35rem;
+	  height: .2rem;
+	  color:#ff4c48;
+	  font-size: .15rem;
+	}
+	.detfo2{
+	 display:block;
+	  width: .30rem;
+	  height: .12rem;
+	  color:#999;
+	  font-size: .12rem;
+	}
+	.detfo3{
+	 display:block;
+	  width: .38rem;
+	  height: .18rem;
+	 background-color: #fff;
+     border: 1px solid #ff4c48;
+     color: #ff4c48;
+     border-radius: 3px;
+     font-size: .1rem;
+     vertical-align: middle;
+     white-space: nowrap;
+     margin-left:.15rem;
+     line-height: .1rem;
+     padding: .02rem .04rem;
+	}
+	.detfo4{
+	 font-size: .11rem;
+	 color:#999;
+	}
+	.pay{
+		height: .35rem;
+		padding: .13rem .13rem;
+		display: flex;
+		justify-content: space-between;
+	}
+	.pay span{
+		
 	}
 </style>
