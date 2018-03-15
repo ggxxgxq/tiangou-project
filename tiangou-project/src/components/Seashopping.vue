@@ -1,9 +1,9 @@
 <template>
 	<div class="aaa">
 		<header>
-			<div class="div1"><i class="iconfont icon-iconset0256"></i></div>
-			<div class="div2"><i class="iconfont icon-sousuo1"></i><input type="text" placeholder="爱乐维叶酸" /></div>
-			<div class="div3"><i class="iconfont  icon-gouwuche"></i></div>
+			<div class="div1"><i class="iconfont icon-tiaoxingma"></i></div>
+			<div class="div2"><i class="iconfont icon-msnui-search"></i><input type="text" placeholder="爱乐维叶酸" /></div>
+			<div class="div3"><i class="iconfont  icon-gouwuche1"></i></div>
 		</header>
 		<nav>
 		   <ul>
@@ -58,7 +58,7 @@
 			<span>single item Recommendation</span>
 			
 			<div class="list" v-for="item in list2">
-			    <a href="/detail" > 
+			    <a :href="'./detail?' + item.data.id" class="rt" > 
 					<div class="listL"><img :src="item.data.imageUrl"></div>
 					<div class="listR">
 						<div class="listR1">{{item.data.title}}</div>
@@ -70,7 +70,7 @@
 				  </a> 
 			</div>
 			<div class="list" v-for="item in list3">
-			    <a href="#/detail"> 
+			    <a :href="'./detail/?' + item.data.id" class="rt"> 
 					<div class="listL"><img :src="item.data.imageUrl"></div>
 					<div class="listR">
 						<div class="listR1">{{item.data.title}}</div>
@@ -82,14 +82,19 @@
 				  </a> 
 			</div> 
 		</div>
+		<Footer></Footer>
 	</div>
 </template>
 
 <script>
 import axios from "axios";
+import Footer from "../components/Footer";
 
 	export default {
 		name: 'Seashopping',
+		components:{
+  	       Footer 
+        },
 		data(){
 		  return{
 		    list:[],
@@ -141,7 +146,7 @@ import axios from "axios";
 		  })
 		  axios.get("https://midway.51tiangou.com/overseas/main/tab.node?cityId=2554&selected=true&pid=12&cid=-1&index=1&_=1520905922945&tabIndex=0&childIndex=0&currentView=2")
 		  .then((res)=>{
-		  	console.log(res.data.data);
+		  	console.log(res.data.data[1].data.clickUrl);
 		  	console.log((res.data.data).slice(0,10));
 		  	console.log((res.data.data).slice(10)[0].data);
 		    this.list2=(res.data.data).slice(0,10);
@@ -162,9 +167,10 @@ import axios from "axios";
 		}
 	}
 </script>
+
 <style scoped>
     .aaa{
-     margin-bottom:.49rem;
+     padding-bottom:1.6rem;
     }
 	header{
     width: 100%;
@@ -174,7 +180,9 @@ import axios from "axios";
 	display: flex;
 	justify-content: space-between; 
 	}
-	
+	header .iconfont{
+		color:#999;
+	}
 	header div i,div input{
 		outline: 0;
 		display: block;
@@ -189,7 +197,7 @@ import axios from "axios";
 		margin-right: .15rem;
 	}
 	.div2{
-		 background: #F4F4F4;
+		background:#F4F4F4;
 		display: flex;
 		align-items: center;
         flex:1;
@@ -200,6 +208,12 @@ import axios from "axios";
        width: 100%;
        border:0;
        background: #F4F4F4;
+       display: block;
+	}
+	.div2 i{
+	   display: inline-block;
+	   margin-top: -0.15rem;
+	   height: .26rem;
 	}
 	nav{
 		height: .40rem;
@@ -301,7 +315,7 @@ import axios from "axios";
     	width: 100%;
     	border-bottom:1px solid #ebebeb; 
     }
-    .listdiv .list a{
+    .listdiv .list .rt{
     	align-items: center;
     	display: flex;
         padding: .1rem .1rem ;
