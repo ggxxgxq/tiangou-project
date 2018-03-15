@@ -7,6 +7,9 @@
 .LoginWrap .iconfont{
 	color: #999;
 }
+.LoginWrap input{
+	outline: 0;
+}
 .header{
 	height: .44rem;
 	font-size: .18rem;
@@ -39,7 +42,7 @@ section{
     text-align: center;
     position: relative;
 }
-.logintype .normal::after{
+.info::after{
     content: "";
     display: block;
     width: 1rem;
@@ -65,12 +68,16 @@ section{
     justify-content:space-between;
 }
 
-.icon-shouji2,.icon-yuechi1{
+.icon-shouji2,.icon-yuechi1,.icon-suo{
 	line-height: .28rem;
 	padding-right: .1925rem;
 }
 .icon-yanjing{
 	font-size: .16rem;
+}
+.icon-cuowu{
+	display: none;
+	font-size: .14rem;
 }
 .Num{
 	flex:1;
@@ -87,6 +94,28 @@ section{
 .disabled{
 	background: #999!important;
 }
+.ver{
+	width: 1rem;
+	height: .28rem;
+	border-radius: 4px;
+	position: relative;
+}
+.ver img{
+	width: 100%;
+	height: 100%;
+}
+.ver span{
+	position: absolute;
+	top:0;
+	left: 30%;
+	font-size: .2rem;
+	color: green;
+}
+.rand{
+	border-left: 1px solid #e0e0e0;
+	color: #999;
+	padding-left: .15rem;
+}
 .login{
 	background: #ccc;
     text-align: center;
@@ -96,6 +125,10 @@ section{
     border:0;
     margin-top:.375rem;
     opacity: .65;
+}
+.red{
+	color: #fff;
+	background: #ff6565;
 }
 .psw{
 	margin-top: .125rem;
