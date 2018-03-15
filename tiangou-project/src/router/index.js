@@ -5,6 +5,7 @@ import Find from '@/components/Find'
 import Detail from '@/components/Detail'
 import Page from '@/components/Page'
 import Login from '@/components/Login'
+import Register from '@/components/Register'
 import Goshopping from '@/components/Goshopping'
 import Seashopping from '@/components/Seashopping'
 import Myshopping from '@/components/Myshopping'
@@ -58,6 +59,11 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component:Login 
+    },
+    {
+      path: '/register',
+      name: 'Register',
+      component:Register 
     }
   ]
 })

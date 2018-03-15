@@ -277,7 +277,7 @@ export default {
   },
   mounted(){
   	axios.get("https://midway.51tiangou.com/shopping/main/init.node?storeId=179&cityId=2554&_=1520824048430").then((res)=>{
-  		/*console.log(res)*/
+  		console.log(res)
   		this. listSlider = res.data.data[6].data.items;
   		this. listNav = res.data.data[7].data.items;
   		this. listOne = res.data.data[8].data.items[0].imageUrl;

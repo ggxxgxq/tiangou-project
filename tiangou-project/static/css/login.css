@@ -4,6 +4,9 @@
 	color: #666;
 	font-size: .14rem;
 }
+.LoginWrap .iconfont{
+	color: #999;
+}
 .header{
 	height: .44rem;
 	font-size: .18rem;
@@ -47,14 +50,71 @@ section{
     margin-left: -0.575rem;
     background-color: #ff4c48;
 }
-.phone{
+.validate{
 	background: #fff;
-	padding:.375rem ;
+	padding:0 .1925rem;
+}
+.validate i{
+	display: block;
 }
 .pNumber{
 	padding: .1rem 0;
     border-bottom: 1px solid #eee;
     display: flex;
-    justify-content:center;
     align-items:center;
+    justify-content:space-between;
+}
+
+.icon-shouji2,.icon-yuechi1{
+	line-height: .28rem;
+	padding-right: .1925rem;
+}
+.icon-yanjing{
+	font-size: .16rem;
+}
+.Num{
+	flex:1;
+}
+.Num input{
+  display: block;
+  width: 100%;
+  border:0;
+  font-size: .15rem;
+}
+.Num input::-webkit-input-placeholder{
+	color: #ccc;
+}
+.disabled{
+	background: #999!important;
+}
+.login{
+	background: #ccc;
+    text-align: center;
+    padding: .06rem .12rem;
+    font-size: .15rem;
+    line-height: .3rem;
+    border:0;
+    margin-top:.375rem;
+    opacity: .65;
+}
+.psw{
+	margin-top: .125rem;
+	padding: .125rem 0;	
+	display: flex;
+	justify-content:space-between;
+	align-items:center;
+}
+.argeeWrap{
+	position: fixed;
+	left: 0;
+	bottom:.2rem;
+    width: 100%;
+}
+.agree{
+	margin-top: .2rem;
+	text-align: center;	
+}
+.agree span{
+	color: #999;
+	font-size: .11rem;
 }

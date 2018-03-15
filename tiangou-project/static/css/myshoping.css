@@ -203,6 +203,13 @@ header {
 	/* width: 33.33%; */
 	background: #fff;
 }
+.detil{
+	-webkit-line-clamp:2;
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-box-orient :vertical;
+	text-overflow: ellipsis;
+} 
 .Lshop-img{
 	width: .1.15rem;
 	height: 1.15rem;
