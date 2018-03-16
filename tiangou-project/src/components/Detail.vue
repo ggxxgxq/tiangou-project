@@ -6,7 +6,11 @@
 				<div class="hone active">商品</div>
 				<div class="htwo">详情</div>
 			</div>
-			<div class="headerthree"><i class="iconfont icon-gouwuche1"></i>
+			<div class="headerthree">
+			      <a href="/shopcart">
+			         <i class="iconfont icon-gouwuche1"></i>
+			      </a>
+
 			<span>...</span></div>
 		</header>
 		
@@ -123,19 +127,6 @@
 			                    </a>
             				</div>   
 				        </div>
-				         <div class="swiper-slide" >
-				            <div class="likelist">				
-							    <a href=""  v-for="item in list3">
-					              	<div class="Lshop" >
-					              		<div class="Lshop-img"><img :src="item.imageUrl"></div>
-					              	<div class="font">
-					              	   <p class="detil">{{item.title}}</p>
-					              	   <p class="price">￥{{item.price}}</p>
-					              	</div>
-					              	</div>
-			                    </a>
-            				</div>   
-				        </div>
 
 				    </div>
 				    <div class="swiper-pagination">			    	
@@ -145,8 +136,40 @@
 		</div>
 		<div class="footer">
 			<div class="zh left"><img width="28" height="35" src="../../static/img/z.png"></div>
-			<div class="nowbuy right">立即购买</div>
-			<div class="gs right">加入购物车</div>
+			<div class="nowbuy right" @click="shopcart()">立即购买</div>
+			<div class="gs right" @click="shopcart()">加入购物车</div>
+		</div>
+		<div class="pop">
+			<div class="bg-white">
+				<div class="bg-f1">
+					<div class="f11">
+					    <img width="90" height="90" src="../../static/img/pop.jpg">
+					</div>
+					<div class="f12">
+						<h1>￥39</h1>
+						<p>库存1266件</p>
+					</div>
+					<span class="f13" @click="cancel()">
+					     <i class="iconfont icon-error"></i>
+					</span>
+				</div>
+				<div class="bg-f2">
+					<div class="prev">数量</div>
+					<div class="next">
+						<div class="nextL">
+							<div class="down">-</div>
+							<input type="number" value="1"/>
+							<div class="addon">+</div>
+						</div>
+						<div class="nextR">库存1266件<br>每人限购10件</div>
+					</div>
+				</div>
+				<div class="bg-f3">
+					<span>另付商品税费</span>
+					<span class="color">￥4.65</span>
+				</div>
+			</div>
+			<div class="hei">确认</div>
 		</div>
 	</div>
 </template>
@@ -162,16 +185,22 @@ import axios from "axios";
 		    list:[],
 		    list1:[],
 		    list2:[],
-		    list3:[],
 		    list4:[]
 		  }
+		},
+		methods:{
+           shopcart(){
+              $(".pop").css("display","block");
+           },
+           cancel(){
+           	 $(".pop").css("display","none");
+           }
 		},
 		mounted(){
            axios.get("https://midway.51tiangou.com/product/listing/init.node?id=12679290&_=1521008336419").then((res)=>{
              this.list=(res.data.data[14].data.items).slice(0,6);
              this.list1=(res.data.data[14].data.items).slice(6,12);
-             this.list2 =(res.data.data[14].data.items).slice(12,18);
-              this.list3 =(res.data.data[14].data.items).slice(18);
+             this.list2 =(res.data.data[14].data.items).slice(12,17);
            })
            var str=location.href;
            var url="https://midway.51tiangou.com/product/listing/init.node?id="+str.slice(str.lastIndexOf("?")+1);
