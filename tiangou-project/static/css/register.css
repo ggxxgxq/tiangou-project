@@ -66,6 +66,10 @@ section{
 .validate i{
 	display: block;
 }
+.validate .icon-cuowu{
+	display: none;
+	font-size: .14rem;
+}
 .pNumber{
 	padding: .1rem 0;
     border-bottom: 1px solid #eee;
@@ -96,7 +100,7 @@ section{
 .disabled{
 	background: #999!important;
 }
-.login{
+.regist{
 	background: #ccc;
     text-align: center;
     padding: .06rem .12rem;
@@ -129,6 +133,10 @@ section{
 	left: 30%;
 	font-size: .2rem;
 	color: green;
+}
+.red{
+	color: #fff;
+	background: #ff6565;
 }
 .code{
 	display: block;

@@ -296,11 +296,11 @@ export default {
   		this.listContent2 = (res.data.data[20].data.items).slice(1);
   		this.listeat = res.data.data[21].data.imageUrl;
   		this.listContent3 = res.data.data[21].data.items;
-  	    this.listworker = res.data.data[23].data.imageUrl;
-  		this.listContent4 = res.data.data[23].data.items;
-  		this.listInfo = res.data.data[25].data.items[0].imageUrl;
+  	    this.listworker = res.data.data[24].data.imageUrl;
+  		this.listContent4 = res.data.data[24].data.items;
+  		this.listInfo = res.data.data[26].data.items[0].imageUrl;
 
-      axios.get(res.data.data[26].data).then((res)=>{
+      axios.get(res.data.data[27].data).then((res)=>{
           this.listContent5 = (res.data.data).slice(0,5);
           
           axios.get(res.data.data[5].data).then((res)=>{
