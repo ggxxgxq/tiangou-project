@@ -10,6 +10,7 @@ import Goshopping from '@/components/Goshopping'
 import Seashopping from '@/components/Seashopping'
 import Myshopping from '@/components/Myshopping'
 import Footer from '@/components/Footer'
+import Shopcart from '@/components/Shopcart'
 Vue.use(Router)
 
 export default new Router({
@@ -64,6 +65,11 @@ export default new Router({
       path: '/register',
       name: 'Register',
       component:Register 
+    },
+    {
+      path: '/shopcart',
+      name: 'Shopcart',
+      component:Shopcart 
     }
   ]
 })

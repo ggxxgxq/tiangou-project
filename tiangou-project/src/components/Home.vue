@@ -7,7 +7,7 @@
 			    <i class="iconfont icon-msnui-search"></i>
 				<input type="search" id="indexSear" name="indexSear" placeholder="天喔多味酸奶￥5元袋">
 			</form>
-			<a href="./page" class="text-white"><i class="iconfont icon-gouwuche1"></i></a>
+			<a href="/shopcart" class="text-white"><i class="iconfont icon-gouwuche1"></i></a>
 			<a href="" ><i class="iconfont icon-xiaoxi1"></i></a>
 		</div>
 		<div class="slider">

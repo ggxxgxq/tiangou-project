@@ -11,7 +11,10 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-        
+        /*"/overseas":{
+            target:"https://midway.51tiangou.com",
+            changeOrigin:true
+        }*/
     },
 
     // Various Dev Server settings

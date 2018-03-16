@@ -3,7 +3,7 @@
 		<header>
 			<div class="div1"><i class="iconfont icon-tiaoxingma"></i></div>
 			<div class="div2"><i class="iconfont icon-msnui-search"></i><input type="text" placeholder="爱乐维叶酸" /></div>
-			<div class="div3"><i class="iconfont  icon-gouwuche1"></i></div>
+			<div class="div3"><a href="/shopcart"><i class="iconfont  icon-gouwuche1"></i></a></div>
 		</header>
 		<nav>
 		   <ul>
@@ -144,8 +144,9 @@ import Footer from "../components/Footer";
 		  .then((res)=>{
 		    this.list=res.data.data[0].data.items;
 		  })
-		  axios.get("https://midway.51tiangou.com/overseas/main/tab.node?cityId=2554&selected=true&pid=12&cid=-1&index=1&_=1520905922945&tabIndex=0&childIndex=0&currentView=2")
+		  axios.get("https://midway.51tiangou.com/overseas/main/tab.node?cityId=2554&selected=true&pid=12&cid=-1&index=1&_=1521118602545&tabIndex=0&childIndex=0&currentView=2")
 		  .then((res)=>{
+		  	console.log(res);
 		  	console.log(res.data.data[1].data.clickUrl);
 		  	console.log((res.data.data).slice(0,10));
 		  	console.log((res.data.data).slice(10)[0].data);
@@ -155,6 +156,9 @@ import Footer from "../components/Footer";
 			    console.log(res.data.data);
 			    this.list3=(res.data.data).slice(0,10);
 			  })
+		  })
+		  axios.get("https://midway.51tiangou.com/overseas/main/tab.node?cityId=2554&selected=true&pid=12&cid=-1&index=1&_=1521120124608&tabIndex=0&childIndex=0&currentView=2").then((res)=>{
+            console.log(res);
 		  })
 		},
 		updated(){
