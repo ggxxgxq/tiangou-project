@@ -146,19 +146,16 @@ import Footer from "../components/Footer";
 		  })
 		  axios.get("https://midway.51tiangou.com/overseas/main/tab.node?cityId=2554&selected=true&pid=12&cid=-1&index=1&_=1521118602545&tabIndex=0&childIndex=0&currentView=2")
 		  .then((res)=>{
-		  	console.log(res);
+		  	/*console.log(res);
 		  	console.log(res.data.data[1].data.clickUrl);
 		  	console.log((res.data.data).slice(0,10));
-		  	console.log((res.data.data).slice(10)[0].data);
+		  	console.log((res.data.data).slice(10)[0].data);*/
 		    this.list2=(res.data.data).slice(0,10);
 	           axios.get((res.data.data).slice(10)[0].data)
 			  .then((res)=>{
-			    console.log(res.data.data);
+			    // console.log(res.data.data);
 			    this.list3=(res.data.data).slice(0,10);
 			  })
-		  })
-		  axios.get("https://midway.51tiangou.com/overseas/main/tab.node?cityId=2554&selected=true&pid=12&cid=-1&index=1&_=1521120124608&tabIndex=0&childIndex=0&currentView=2").then((res)=>{
-            console.log(res);
 		  })
 		},
 		updated(){
