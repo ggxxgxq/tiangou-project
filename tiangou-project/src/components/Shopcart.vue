@@ -1,18 +1,82 @@
 <template>
 	<div class="bodyWrap">
 		<header>
-			<div class="headerone"><i class="iconfont icon-jiantou2"></i> </div>
+			<div class="headerone">
+				<a href="/seashopping">
+				<i class="iconfont icon-jiantou2"></i>
+				</a>
+			</div>
 			<div class="headertwo">
 				<div class="htwo">购物车</div>
 			</div>
 			<div class="headerthree"><a href="/shopcart"><i class="iconfont icon-gouwuche"></i></a>
 			<i class="iconfont icon-more"></i></div>
 		</header>
+		<div class="store">
+			<div class="storeleft">
+				<i class="iconfont icon-duigou"></i>
+				<span>郑州保税仓1号仓</span>
+			</div>
+			<div class="storeright">
+				<span class="get">领券</span>
+				<i class="iconfont icon-shanchu"></i>
+				<span class="del">删除</span>
+			</div>
+		</div>
+		<div class="contentwrap">
+			<div class="content">
+				<i class="iconfont icon-duigou"></i>
+				<div class="contentright">
+					<img src="../../static/img/pop.jpg" width="75" height="75">
+					<div class="main">
+						<div class="maintop">啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</div>
+						<div class="mainbottom">
+							<div class="mbl">
+							   <span>￥39</span>
+							   <span>￥132</span>
+							</div>
+                            <div class="mbr">
+                            	<div class="down">-</div>
+                            	<input type="number" value="1"/>
+                            	<div class="addon">+</div>
+                            </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		 <div class="likeWrap">
+			<p class="line"></p>
+			<h1>猜你喜欢</h1>
+			<div class="likeshop">
+		                <div class="swiper-container">
+				    <div class="swiper-wrapper" >
+				        <div class="swiper-slide" >
+				            <div class="likelist">				
+							    <a href=""  v-for="item in list">
+					              	<div class="Lshop" >
+					              		<div class="Lshop-img"><img :src="'https://image1.51tiangou.com/'+item.imageUrl+'!s'></div>
+					              	<div class="font">
+					              	   <p class="de"til">{{item.productName}}</p>
+					              	   <p class="price">￥{{item.price}}</p>
+					              	</div>
+					              	</div>
+			                    </a>
+		            				</div>   
+				        </div>
 		
+				    </div>
+				    <div class="swiper-pagination">			    	
+				   </div>	
+				</div> 
+		           </div>
+		</div> 
 	</div>
 </template>
-
+<!-- https://image1.51tiangou.com/seller/201711/23/11DE2DC4-F564-4D2E-BC4F-817036520FA2.jpg!s-->
+<!-- seller/201707/25/F58A3BF9-D279-428A-9A07-C3E2FE35AEC7.jpg -->
 <script>
+import axios from "axios";
 	export default {
 		name: 'Shopcart',
 		components:{
@@ -20,8 +84,22 @@
 		  },
 		data(){
 		  return{
-		    
+		    list:[]
 		  }
+		},
+		mounted(){
+            /*axios.get("https://item.51tiangou.com/mallProduct/recommend/byMember").then((res)=>{
+                console.log(res.data.data);
+                 this.list=res.data.data;
+            })*/
+		},
+		updated(){
+			/*var swiper = new Swiper('.swiper-container', {
+		      autoplay:true,
+		      pagination: {
+		        el: '.swiper-pagination',
+		      },
+		    });*/
 		}
 	}
 </script>
@@ -40,6 +118,7 @@ header {
 	align-items: center;
 	font-size: .14rem;
 	background: #fff;
+	margin-bottom: .13rem;
 }
 .headerone{
    min-width: 20%; 
@@ -100,4 +179,119 @@ header {
 	line-height: .44rem;
 	text-align: center;
 }
+.store{
+	padding: .1rem;
+	display: flex;
+	justify-content: space-between;
+	background: #f8f8f8;
+	color:#222;
+}
+.icon-duigou{
+	color: #16cc90;
+}
+.storeleft span{
+	margin-left: .1rem;
+	font-size: .14rem;
+
+}
+.storeright{
+	display: flex;
+	align-items: center;
+}
+.storeright .get{
+	border-right: .01rem solid #ebebeb;
+	border-color: #ccc;
+	font-size: .12rem;
+	padding-right: .1rem;
+}
+.storeright .iconfont{
+	color:#222;
+}
+.storeright .del{
+	margin-left: .03rem;
+}
+.storeright .iconfont{
+	margin-left: .13rem;
+	margin-top: .03rem;
+}
+.contentwrap{
+	background: #fff;
+	font-size: .14rem;
+	color:#222;
+}
+.content{
+	padding: .1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: .01rem solid #ebebeb;
+}
+.contentright{
+	margin-left: .13rem;
+	display: flex;
+	justify-content: space-between;
+}
+.contentright .main{
+	margin-left: .1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.mainbottom{
+	display: flex;
+	justify-content: space-between;
+}
+.mbl{
+	display: flex;
+	align-items: center;
+}
+.mbl span:first-child{
+	font-size: .16rem;
+	color:#222;
+}
+.mbl span{
+	font-size: .11rem;
+	color:#999;
+}
+.mbr{
+	display: flex;
+	width: 1.1rem;
+	align-items: center;
+}
+.mbr input{
+
+    width: calc(100% - 58px);
+    border-color: #999;
+    height: .30rem;
+    padding: .04rem .12rem;
+    font-size: .16rem;
+    line-height: .26rem;
+    background-color: #fff;
+    border: .01rem solid #ccc;
+    text-align: center;
+}
+.down{
+	    height: .3rem;
+    	padding: .01rem 0;
+    	border-color: #999;
+    	min-width: .30rem;
+    	opacity: .55;
+    	text-align: center;
+    	border: .01rem solid #ccc!important;
+    	color: #ccc!important;
+    	background-color: #fff!important;
+    	margin-left: -.01rem;
+    }
+  .addon{
+    	padding: .01rem 0;
+    	border: .01rem solid #ccc;
+    	border-color: #999;
+    	min-width: .30rem;
+    	text-align: center;
+	    white-space: nowrap;
+	    line-height: .26rem;
+	    color: #666;
+	    font-size: .16rem;
+	    background-color: #fff!important;
+    }
 </style>

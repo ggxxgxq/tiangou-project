@@ -143,10 +143,10 @@
 			<div class="bg-white">
 				<div class="bg-f1">
 					<div class="f11">
-					    <img width="90" height="90" src="../../static/img/pop.jpg">
+					    <img width="90" height="90" :src="list4[0].data.imageUrl">
 					</div>
 					<div class="f12">
-						<h1>￥39</h1>
+						<h1>￥{{list4[3].data.price}}</h1>
 						<p>库存1266件</p>
 					</div>
 					<span class="f13" @click="cancel()">
@@ -157,9 +157,9 @@
 					<div class="prev">数量</div>
 					<div class="next">
 						<div class="nextL">
-							<div class="down">-</div>
-							<input type="number" value="1"/>
-							<div class="addon">+</div>
+							<div class="down" data-number="-1" @click="down()">-</div>
+							<input class="txt" type="number" value="1"/>
+							<div class="addon" data-number="1" @click="add()">+</div>
 						</div>
 						<div class="nextR">库存1266件<br>每人限购10件</div>
 					</div>
@@ -169,7 +169,7 @@
 					<span class="color">￥4.65</span>
 				</div>
 			</div>
-			<div class="hei">确认</div>
+			<a href="/shopcart"><div class="hei" @click="confirm()">确认</div></a>
 		</div>
 	</div>
 </template>
@@ -194,6 +194,22 @@ import axios from "axios";
            },
            cancel(){
            	 $(".pop").css("display","none");
+           },
+           add(){
+            var count=$(".txt").val();
+            count++;
+            $(".txt").val(count);
+           },
+           down(){
+            var count=$(".txt").val();
+            if(count==1){
+            	return;
+            }
+            count--;
+            $(".txt").val(count);
+           },
+           confirm(){
+
            }
 		},
 		mounted(){
