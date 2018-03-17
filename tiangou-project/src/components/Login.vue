@@ -17,12 +17,12 @@
 						<i class="iconfont icon-shouji2"></i>
 						<div class="Num"><input @keyup="pNum()" 
 						 type="text" name="pho" id="pho" @focus="phoneNum()" placeholder="请输入11位手机号码"></div>
-						<i class="iconfont icon-cuowu pi" @click="clearp()"></i>
+						<i class="iconfont icon-cuowu pi" @click="clearp()" @blur="cls()"></i>
 					</div>
 					<div class="pNumber find">
 						<i class="iconfont icon-yuechi1"></i>
 						<div class="Num"><input type="password" name="pwd" id="pwd" @keyup="wNum" @focus="passWord()" placeholder="请输入6-16位密码" /></div>
-						<i class="iconfont icon-cuowu wi" @click="clearp1()"></i>
+						<i class="iconfont icon-cuowu wi" @click="clearp1()"  @blur="cls1()"></i>
 						<i class="iconfont icon-yanjing"  @click="showpsw()" ></i>
 					</div>
 					
@@ -46,7 +46,7 @@
 					</div>
 				</div>
 					<div class="loginWrap">					
-						<div class="login" @click="login()" :flag="flag">
+						<div class="login" @click="login()" >
 							 登&nbsp;&nbsp;录
 						</div>
 					</div>
@@ -173,6 +173,13 @@ export default {
 		},
 		none(){
 			$(".tgou_alert").css("display","none")
+		},
+		cls(){
+           $(".validate .pi").css("display","none")
+		},
+		cls1(){
+           $(".validate .wi").css("display","none")
+          
 		}
 	},
 }

@@ -66,6 +66,20 @@ section{
 .validate i{
 	display: block;
 }
+.validate em{
+	position: absolute;
+    line-height: 12px;
+    color: #fff;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    font-size: 9px;
+    line-height: 12px;
+    font-weight: 400;
+    background: #ff6565;
+    padding: 0 5px;
+    display: none;
+}
 .validate .icon-cuowu{
 	display: none;
 	font-size: .14rem;
@@ -76,6 +90,7 @@ section{
     display: flex;
     align-items:center;
     justify-content:space-between;
+    position: relative;
 }
 
 .icon-shouji2,.icon-suo,.icon-yuechi1{

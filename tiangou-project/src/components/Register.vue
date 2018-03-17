@@ -10,14 +10,16 @@
 				<div class="validate">
 					<div class="pNumber">
 						<i class="iconfont icon-shouji2"></i>
-						<div class="Num"><input type="text" id="pho" placeholder="请输入11位手机号码" @keyup="pNum()"></div>
+						<div class="Num"><input type="text" id="pho" placeholder="请输入11位手机号码" @keyup="pNum()"  @blur="bl()" ></div>
 						<i class="iconfont icon-cuowu pi" @click="clearp()"></i>
+						<em class="tit">手机号有误,汪</em>
 					</div>
 					<div class="pNumber ">
 						<i class="iconfont icon-suo"></i>
-						<div class="Num"><input type="password" id="pwd" placeholder="请输入6-16位密码" @keyup="wNum()"></div>
+						<div class="Num"><input type="password" id="pwd" placeholder="请输入6-16位密码" @keyup="wNum()"  @blur="br()"></div>
 						<i class="iconfont icon-cuowu wi" @click="clearp1()"></i>
 						<i class="iconfont icon-yanjing" @click="showpsw()" ></i>
+						<em class="tit1">手机号或者密码不正确</em>
 					</div>
 					<div class="pNumber">
 						<i class="iconfont icon-yuechi1"></i>
@@ -64,17 +66,37 @@ export default {
        		 fnYan()              	
         },   
         regist(){
-        	axios.post("/api/regist",{
-	           	    number :$("#pho").val(),
-	           	    password : $("#pwd").val()
-	           }).then((res)=>{
-					console.log(res)
-                    if(res.data.status ==1){
-                    	location.href="http://localhost:8080/login";
-                    }else{
-                    	alert(res.data.message);
-                    }
-			})
+            var pNum = null;
+	        var regt = /^1(3|5|8)\d{9}$/;
+	        var regp = /^\w{6,16}$/;
+	        var tel = $("#pho").val();
+	        var psd = $("#pwd").val();
+            if(regt.test(tel) && regp.test(psd)){
+	        	axios.post("/api/regist",{
+		           	    number :$("#pho").val(),
+		           	    password : $("#pwd").val()
+		           }).then((res)=>{
+						console.log(res)
+	                    if(res.data.status ==1){
+	                    	location.href="http://localhost:8080/login";
+	                    }else{
+	                    	alert(res.data.message);
+	                    }
+				})  	
+            }else if(!regt.test(tel)|| !regt.test(psd)){
+                if(!regt.test(tel) && !regt.test(psd)){
+                    $(".tit").css("display","block")
+                    $(".tit1").css("display","block")
+                }else if(!regt.test(psd)){
+                    $(".tit1").css("display","block")
+                }else{
+                	 $(".tit").css("display","block")
+                	
+                }
+            }
+
+
+
         }, 
         showpsw(){
 		     if($("#pwd").attr("type")=="password"){
@@ -109,6 +131,12 @@ export default {
         clearp1(){
 			$("#pwd").val("")
 		},  
+		bl(){
+			 $(".tit").css("display","none")
+		},
+		br(){
+			$(".tit1").css("display","none")
+		}
 	},
 }
 

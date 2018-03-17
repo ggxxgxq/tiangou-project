@@ -278,29 +278,29 @@ export default {
   mounted(){
   	axios.get("https://midway.51tiangou.com/shopping/main/init.node?storeId=179&cityId=2554&_=1520824048430").then((res)=>{
   		console.log(res)
-  		this. listSlider = res.data.data[6].data.items;
-  		this. listNav = res.data.data[7].data.items;
-  		this. listOne = res.data.data[8].data.items[0].imageUrl;
-  		this. listSpe = res.data.data[10].data.items[0].imageUrl;
-  		this. listLimit = res.data.data[11].data.items;
-  		this. listGroop = res.data.data[13].data.items;
-  		this. listQua = res.data.data[15].data.items[0].imageUrl;
-  		this. listQshop1 = res.data.data[16].data.items[0];
-  		this. listQshop2 = res.data.data[16].data.items[1];
-  		this. listQshop3 = res.data.data[16].data.items[2];
-  		this. listQshop4 = res.data.data[16].data.items[3];
-  		this.listAct = res.data.data[18].data.items[0].imageUrl;
-  		this.listbaby = res.data.data[19].data.items[0].imageUrl;
-  		this.listContent1 = (res.data.data[19].data.items).slice(1);
-  	    this.listdis = res.data.data[20].data.items[0].imageUrl;
-  		this.listContent2 = (res.data.data[20].data.items).slice(1);
+  		this. listSlider = res.data.data[5].data.items;
+  		this. listNav = res.data.data[6].data.items;
+  		this. listOne = res.data.data[7].data.items[0].imageUrl;
+  		this. listSpe = res.data.data[9].data.items[0].imageUrl;
+  		this. listLimit = res.data.data[10].data.items;
+  		this. listGroop = res.data.data[12].data.items;
+  		this. listQua = res.data.data[14].data.items[0].imageUrl;
+  		this. listQshop1 = res.data.data[15].data.items[0];
+  		this. listQshop2 = res.data.data[15].data.items[1];
+  		this. listQshop3 = res.data.data[15].data.items[2];
+  		this. listQshop4 = res.data.data[15].data.items[3];
+  		this.listAct = res.data.data[17].data.items[0].imageUrl;
+  		this.listbaby = res.data.data[18].data.items[0].imageUrl;
+  		this.listContent1 = (res.data.data[18].data.items).slice(1);
+  	    this.listdis = res.data.data[19].data.items[0].imageUrl;
+  		this.listContent2 = (res.data.data[19].data.items).slice(1);
   		this.listeat = res.data.data[21].data.imageUrl;
   		this.listContent3 = res.data.data[21].data.items;
-  	    this.listworker = res.data.data[24].data.imageUrl;
-  		this.listContent4 = res.data.data[24].data.items;
-  		this.listInfo = res.data.data[26].data.items[0].imageUrl;
+  	    this.listworker = res.data.data[23].data.imageUrl;
+  		this.listContent4 = res.data.data[23].data.items;
+  		this.listInfo = res.data.data[25].data.items[0].imageUrl;
 
-      axios.get(res.data.data[27].data).then((res)=>{
+      axios.get(res.data.data[26].data).then((res)=>{
           this.listContent5 = (res.data.data).slice(0,5);
           
           axios.get(res.data.data[5].data).then((res)=>{
