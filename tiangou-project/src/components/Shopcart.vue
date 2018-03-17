@@ -9,7 +9,7 @@
 			<div class="headertwo">
 				<div class="htwo">购物车</div>
 			</div>
-			<div class="headerthree"><a href="/shopcart"><i class="iconfont icon-gouwuche"></i></a>
+			<div class="headerthree"><a href="/shopcart"><i class="iconfont icon-gouwuche1"></i></a>
 			<i class="iconfont icon-more"></i></div>
 		</header>
 		<div class="store">
@@ -36,45 +36,87 @@
 							   <span>￥132</span>
 							</div>
                             <div class="mbr">
-                            	<div class="down">-</div>
-                            	<input type="number" value="1"/>
-                            	<div class="addon">+</div>
+                            	<div class="down" @click="down()">-</div>
+                            	<input type="number" class="txt" value="1"/>
+                            	<div class="addon" @click="add()">+</div>
                             </div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		 <div class="likeWrap">
+			<div class="likeWrap">
 			<p class="line"></p>
 			<h1>猜你喜欢</h1>
 			<div class="likeshop">
-		                <div class="swiper-container">
+                <div class="swiper-container">
 				    <div class="swiper-wrapper" >
 				        <div class="swiper-slide" >
 				            <div class="likelist">				
 							    <a href=""  v-for="item in list">
 					              	<div class="Lshop" >
-					              		<div class="Lshop-img"><img :src="'https://image1.51tiangou.com/'+item.imageUrl+'!s'></div>
+					              		<div class="Lshop-img"><img :src="'https://image1.51tiangou.com/'+item.imageUrl+'!s'"></div>
 					              	<div class="font">
-					              	   <p class="de"til">{{item.productName}}</p>
+					              	   <p class="detil">{{item.productName}}</p>
 					              	   <p class="price">￥{{item.price}}</p>
 					              	</div>
 					              	</div>
 			                    </a>
-		            				</div>   
+            				</div>   
 				        </div>
-		
+				         <div class="swiper-slide" >
+				            <div class="likelist">				
+							    <a href=""  v-for="item in list1">
+					              	<div class="Lshop" >
+					              		<div class="Lshop-img"><img :src="'https://image1.51tiangou.com/'+item.imageUrl+'!s'"></div>
+					              	<div class="font">
+					              	   <p class="detil">{{item.productName}}</p>
+					              	   <p class="price">￥{{item.price}}</p>
+					              	</div>
+					              	</div>
+			                    </a>
+            				</div>   
+				        </div>
+				         <div class="swiper-slide" >
+				            <div class="likelist">				
+							    <a href=""  v-for="item in list2">
+					              	<div class="Lshop" >
+					              		<div class="Lshop-img"><img :src="'https://image1.51tiangou.com/'+item.imageUrl+'!s'"></div>
+					              	<div class="font">
+					              	   <p class="detil">{{item.productName}}</p>
+					              	   <p class="price">￥{{item.price}}</p>
+					              	</div>
+					              	</div>
+			                    </a>
+            				</div>   
+				        </div>
+				         <div class="swiper-slide" >
+				            <div class="likelist">				
+							    <a href=""  v-for="item in list3">
+					              	<div class="Lshop" >
+					              		<div class="Lshop-img"><img :src="'https://image1.51tiangou.com/'+item.imageUrl+'!s'"></div>
+					              	<div class="font">
+					              	   <p class="detil">{{item.productName}}</p>
+					              	   <p class="price">￥{{item.price}}</p>
+					              	</div>
+					              	</div>
+			                    </a>
+            				</div>   
+				        </div>
+
 				    </div>
 				    <div class="swiper-pagination">			    	
 				   </div>	
 				</div> 
-		           </div>
-		</div> 
+
+
+				
+			</div>
+		</div>
 	</div>
 </template>
 <!-- https://image1.51tiangou.com/seller/201711/23/11DE2DC4-F564-4D2E-BC4F-817036520FA2.jpg!s-->
-<!-- seller/201707/25/F58A3BF9-D279-428A-9A07-C3E2FE35AEC7.jpg -->
+<!-- seller/201711/23/11DE2DC4-F564-4D2E-BC4F-817036520FA2.jpg -->
 <script>
 import axios from "axios";
 	export default {
@@ -84,23 +126,45 @@ import axios from "axios";
 		  },
 		data(){
 		  return{
-		    list:[]
+		    list:[],
+		    list1:[],
+		    list2:[],
+		    list3:[]
 		  }
 		},
+		methods:{
+			add(){
+            var count=$(".txt").val();
+            count++;
+            $(".txt").val(count);
+           },
+           down(){
+            var count=$(".txt").val();
+            if(count==1){
+            	return;
+            }
+            count--;
+            $(".txt").val(count);
+           }
+		},
 		mounted(){
-            /*axios.get("https://item.51tiangou.com/mallProduct/recommend/byMember").then((res)=>{
+            axios.get("https://item.51tiangou.com/mallProduct/recommend/byMember").then((res)=>{
                 console.log(res.data.data);
-                 this.list=res.data.data;
-            })*/
+               this.list =(res.data.data).slice(0,6);
+               this.list1 =(res.data.data).slice(6,12);
+               this.list2 =(res.data.data).slice(12,18);
+               this.list3 =(res.data.data).slice(18);
+            })
 		},
 		updated(){
-			/*var swiper = new Swiper('.swiper-container', {
+			var swiper = new Swiper('.swiper-container', {
 		      autoplay:true,
 		      pagination: {
 		        el: '.swiper-pagination',
 		      },
-		    });*/
+		    });
 		}
+
 	}
 </script>
 
@@ -110,7 +174,9 @@ import axios from "axios";
 	color: #666;
 	font-size: .14rem;
 }
-
+.icon-shanchu{
+	font-size: .18rem;
+}
 header {
 	height: .44rem;
 	display: flex;
@@ -124,6 +190,9 @@ header {
    min-width: 20%; 
    padding-left:.1rem; 
 
+}
+.icon-duigou{
+	font-size: .17rem;
 }
 .icon-jiantou2{
 	 font-size: .35rem;
@@ -149,6 +218,7 @@ header {
 .icon-gouwuche{
 	color:#666;
 }
+
 .headertwo{
    font-size: .15rem;
    display: flex;
@@ -294,4 +364,66 @@ header {
 	    font-size: .16rem;
 	    background-color: #fff!important;
     }
+    .likeWrap{
+	overflow: hidden;
+	margin-top: .133rem;
+	background: #fff;
+	margin-bottom: .33rem;
+}
+.likeWrap .line{
+	margin-top: .2rem;
+	border-bottom: 1px solid #ebebeb;
+	margin-right:.33rem ;
+	margin-left:.33rem ;
+}
+.likeWrap h1{
+	width: 1rem;
+	font-size: .14rem;
+	margin: -.25rem auto .2rem;
+	text-align: center;
+	color: #222;
+	padding: .133rem 0;
+	background: #fff;
+}
+.likelist{
+	padding-bottom: .33rem;
+	overflow: hidden;
+}
+.likelist a{
+	width: 33.33%;
+	display: block;
+	float: left;
+}
+.Lshop{
+	/* width: 33.33%; */
+	background: #fff;
+}
+.detil{
+	-webkit-line-clamp:2;
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-box-orient :vertical;
+	text-overflow: ellipsis;
+} 
+.Lshop-img{
+	width: .1.15rem;
+	height: 1.15rem;
+}
+.Lshop-img img{
+	max-width: 100%;
+	max-height: 100%;
+}
+.font{
+	padding: .065rem;
+	-webkit-line-clamp:2;
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-box-orient :vertical;
+	text-overflow: ellipsis;
+}
+.price{
+	font-size: .17rem;
+	color: #ff4c48;
+}
+
 </style>
